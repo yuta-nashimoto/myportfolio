@@ -10,18 +10,20 @@
 <div class="wrapper">
 	<!-- BEGIN header -->
 	<header id="header">
-		<div class="logo">
-			<img src="" alt="">
+		<div class="header_inner">
+			<div class="logo">
+				<img src="" alt="ロゴです">
+			</div>
+			<nav class="gnav">
+				<ul class="gnav_list">
+					<li class="gnav_item"><a href="#">information</a></li>
+					<li class="gnav_item"><a href="#">ナビ02</a></li>
+					<li class="gnav_item"><a href="#">ナビ03</a></li>
+					<li class="gnav_item"><a href="#">ナビ04</a></li>
+					<li class="gnav_item"><a href="#">ナビ05</a></li>
+				</ul>
+			</nav>
 		</div>
-		<nav class="gnav">
-			<ul class="gnav_list">
-				<li class="gnav_item">ナビ01</li>
-				<li class="gnav_item">ナビ02</li>
-				<li class="gnav_item">ナビ03</li>
-				<li class="gnav_item">ナビ04</li>
-				<li class="gnav_item">ナビ05</li>
-			</ul>
-		</nav>
 	<!-- END header --></header>
 
 	<!-- BEGIN main -->
@@ -30,6 +32,21 @@
 		<section class="main_visual">
 			<h1><img src="main_visual_img" alt=""></h1>
 		<!-- END main_visual --></section>
+
+		<!-- BEGIN infomation -->
+		<section class="infomation">
+			<h2 class="section_ttl">infomation</h2>
+			<div class="infomation_box">
+				<ul class="infomation_list">
+					<li class="infomation_item">
+						<h3 class="infomation_ttl">挨拶</h3>	
+					</li>
+					<li class="infomation_item">
+						<h3 class="infomation_ttl">経歴</h3>
+					</li>
+				</ul>
+			</div>
+		<!-- END infomation --></section>
 
 		<!-- BEGIN main_skill_lv -->
 		<section class="main_skill_lv">
@@ -69,9 +86,15 @@
 			<h2 class="section_ttl">PORTFOLIO</h2>
 			<div class="portfolio_box">
 				<ul class="portfolio_list">
-					<li class="portfolio_item"></li>
-					<li class="portfolio_item"></li>
-					<li class="portfolio_item"></li>
+					<li class="portfolio_item">
+						
+					</li>
+					<li class="portfolio_item">
+						
+					</li>
+					<li class="portfolio_item">
+						
+					</li>
 				</ul>
 			</div>
 		<!-- END main_portfolio --></section>
@@ -93,16 +116,30 @@
 		<!-- BEGIN main_form -->
 		<section class="main_form">
 			<h2 class="section_ttl">FORM</h2>
-
+			<div class="form_box">
+				<form action="" method="post">
+					<div>
+						<label for="name">NAME:</label>
+						<input type="text" id="name" name="person-name" placeholder="お名前">
+					</div>
+					<div>
+						<label for="mail">E-Mail:</label>
+						<input type="email" id="email" name="person-mail" placeholder="E-Mail">
+					</div>
+					<div>
+						<label for="msg">Message</label>
+						<input type="msg" id="email" name="person-message">
+					</div>
+				</form>
+			</div>
 		<!-- END main_form --></section>
 
 	<!-- END main --></main>
 
-
 	<!-- BEGIN footer -->
 	<footer id="footer">
 		<div class="footer_copyright">
-			
+			&copy;CopyRights Nashimoto Yuta
 		</div>
 	<!-- END footer --></footer>
 
