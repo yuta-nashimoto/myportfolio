@@ -4,6 +4,8 @@
 02.common
 03.header
 04.main
+  04-1.about
+  04-2.skill
 05.footer
 ============================== */
 
@@ -11,17 +13,12 @@
 /* ==============================
 01.variable
 ============================== */
-//背景色
-$base_color: #1b244b;
+$base_color: #1b244b; //背景色
+$base_fontColor: #a1a9b0; //文字の色
+$base_fontSize-pc: 16px; //PC版 ベースフォント
+$base_fontSize-sp: 14px; //SP版 ベースフォント
+$sec_ttl: 40px;
 
-//文字の色
-$base_fontColor: #a1a9b0;
-
-//PC版 ベースフォント
-$base_fontSize-pc: 16px;
-
-//SP版 ベースフォント
-$base_fontSize-sp: 14px;
 
 
 
@@ -36,11 +33,11 @@ font-size: $base_fontSize-pc;
     box-sizing: border-box;
     position: relative;
 }
-section{
-    height: 100vh;
+.section_ttl{
+    font-size: $sec_ttl;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
 }
-
-
 
 
 /* ==============================
@@ -56,7 +53,7 @@ section{
     .header_inner{
         display: flex;
         justify-content: space-between;
-        width: 80%;
+        width: 75%;
         margin: 0 auto;
         padding: 10px 10px;
         .gnav{
@@ -66,6 +63,7 @@ section{
                     display: block;
                     padding: 10px 30px;
                     color:$base_fontColor;
+                    letter-spacing: 1px;
                 }
             }
         }
@@ -79,18 +77,78 @@ section{
 #main{
     background-color: $base_color;
     color: $base_fontColor;
+    padding-top: 64px;
     .main_visual{
-        position: relative;
-        background: url(/img/bg/mv_bg.jpg) center/cover fixed no-repeat;
-    }
-    .main_visual:before{
-        content:"";
-        display: block;
-        width: 100%;
         height: 100vh;
-        background-color: rgba(27,36,75,.6);
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: relative;
+        background: url(../img/bg/mv_bg.jpg) center/cover fixed no-repeat;
+        .main_ttl{
+            font-size: 64px;
+            color: $base_fontColor;
+            letter-spacing: 3px;
+            position: absolute;
+            top: calc(50% - 64px);
+            left: 12.5%;
+            transform: translateY(-50%);
+            span{
+                color:#856E07;
+            }
+        }
+        &:before{
+            content:"";
+            display: block;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(27,36,75,.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
+}
+
+
+.about{
+    width: 75%;
+    margin: 0 auto 80px;
+    padding-top: 60px;
+    .about_detail{
+        .about_detail_item{
+            display: flex;
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $base_fontColor;
+            &:first-child{
+                border-top: 1px solid $base_fontColor;
+                margin-top: 0;
+                padding-top: 20px;
+            }
+            .detail_ttl,
+            .detail_txt{
+                font-size: 18px;
+            }
+            .detail_ttl{
+                width: 16%;
+                margin-right: 40px;
+            }
+            .detail_txt{
+                width: 84%;
+            }
+            .careerbox{
+                div{
+                    margin-bottom: 20px;
+                    .career_txt{
+                        padding-left: 24px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.skill{
+    width: 75%;
+    margin: 0 auto 80px;
+    padding-top: 60px;
 }
