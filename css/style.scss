@@ -150,12 +150,6 @@ img {
 	}
 }
 
-.skill {
-	width: $contents_width;
-	margin: 0 auto 80px;
-	padding-top: 24px;
-}
-
 .main_portfolio {
 	width: $contents_width;
 	margin: 0 auto 80px;
@@ -204,68 +198,98 @@ img {
 	}
 }
 .skill {
-	.skillbar {
-		position: relative;
-		display: inline-block;
-		width: 100%;
-		background: #eee;
-		height: 30px;
-		border-radius: 3px;
-		width: 100%;
-		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12) inset;
-		&:not(:last-child) {
-			margin-bottom: 50px;
-		}
-		.skillbar-title {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 80px;
-			font-weight: bold;
-			font-size: 13px;
-			color: #ffffff;
-			background: #6adcfa;
-			border-top-left-radius: 3px;
-			border-bottom-left-radius: 3px;
-			background: rgba(0, 0, 0, 0.1);
-			padding: 0 20px;
-			height: 30px;
-			line-height: 30px;
-		}
-		.skillbar-bar {
-			height: 30px;
-			width: 0px;
-			background: #6adcfa;
-			border-radius: 3px;
+	width: $contents_width;
+	margin: 0 auto 80px;
+	padding-top: 24px;
+	.skill_list {
+		width: 92%;
+		margin: 0 auto;
+		.skillbar {
+			position: relative;
 			display: inline-block;
+			background: #eee;
+			height: 50px;
+			border-radius: 3px;
+			width: 100%;
+			box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12) inset;
+			&:not(:last-child) {
+				margin-bottom: 50px;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: -48px;
+				transform: translateY(-50%);
+				display: block;
+				width: 36px;
+				height: 36px;
+			}
+			.skillbar-title {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 80px;
+				font-weight: bold;
+				font-size: 13px;
+				color: #ffffff;
+				background: #6adcfa;
+				border-top-left-radius: 3px;
+				border-bottom-left-radius: 3px;
+				background: rgba(0, 0, 0, 0.1);
+				padding: 0 20px;
+				height: 50px;
+				line-height: 50px;
+			}
+			.skillbar-bar {
+				height: 50px;
+				width: 0px;
+				background: #6adcfa;
+				border-radius: 3px;
+				display: inline-block;
+			}
+			.skill-bar-percent {
+				position: absolute;
+				right: -36px;
+				top: 0;
+				font-size: 11px;
+				height: 50px;
+				line-height: 40px;
+				color: $base_fontColor;
+			}
 		}
-		.skill-bar-percent {
-			position: absolute;
-			right: 10px;
-			top: 0;
-			font-size: 11px;
-			height: 30px;
-			line-height: 30px;
-			color: #ffffff;
-			color: rgba(0, 0, 0, 0.4);
+		.skillbar-html {
+			&:before {
+				background: url(../img/icon/html-5.svg) center/36px 36px no-repeat;
+			}
+			.skillbar-title {
+				background: #d35400;
+			}
+			.skillbar-bar {
+				background: #e67e22;
+			}
 		}
-	}
-	.skillbar-html .skillbar-title {
-		background: #d35400;
-	}
-	.skillbar-html .skillbar-bar {
-		background: #e67e22;
-	}
-	.skillbar-css .skillbar-title {
-		background: #0c73b8;
-	}
-	.skillbar-css .skillbar-bar {
-		background: #268dd2;
-	}
-	.skillbar-js .skillbar-title {
-		background: #e5a228;
-	}
-	.skillbar-js .skillbar-bar {
-		background: #febb42;
+		.skillbar-css {
+			&:before {
+				background: url(../img/icon/css-3.svg) center/36px 36px no-repeat;
+			}
+			.skillbar-title {
+				background: #0c73b8;
+			}
+			.skillbar-bar {
+				background: #268dd2;
+			}
+		}
+		.skillbar-js {
+			&:before {
+				background: url(../img/icon/javascript.svg) center/36px 36px no-repeat;
+			}
+			.skillbar-title {
+				background: #e5a228;
+			}
+			.skillbar-bar {
+				background: #febb42;
+			}
+		}
 	}
 }
