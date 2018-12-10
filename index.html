@@ -2,6 +2,10 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+		/>
 		<title>Yuta Nashimoto</title>
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/style.css" />
@@ -10,7 +14,7 @@
 		<div class="wrapper">
 			<!-- BEGIN header -->
 			<header id="header">
-				<div class="header_inner">
+				<div class="gnav_wrap is_none">
 					<nav class="gnav">
 						<ul class="gnav_list">
 							<li class="gnav_item"><a href="#">ABOUT</a></li>
@@ -27,8 +31,8 @@
 			<!-- BEGIN main -->
 			<main id="main">
 				<!-- BEGIN main_visual -->
-				<section class="main_visual">
-					<h1 class="main_ttl">
+				<section class="main_visual parallax">
+					<h1 class="main_ttl parallax_txt">
 						I'm<br />
 						<span>N</span>ashimoto<br />
 						<span>Y</span>uta
@@ -38,7 +42,7 @@
 				</section>
 
 				<!-- BEGIN ABOUT -->
-				<section class="about">
+				<section id="about" class="about">
 					<h2 class="section_ttl">ABOUT</h2>
 					<div class="about_box">
 						<div class="about_detail">
@@ -108,7 +112,7 @@
 				</section>
 
 				<!-- BEGIN main_portfolio -->
-				<section class="main_portfolio">
+				<section id="main_portfolio" class="main_portfolio">
 					<h2 class="section_ttl">PORTFOLIO</h2>
 					<div class="portfolio_box">
 						<ul class="portfolio_list">
@@ -178,16 +182,16 @@
 				</section>
 
 				<!-- BEGIN skill -->
-				<section class="skill">
+				<section id="skill" class="skill">
 					<h2 class="section_ttl">SKILL</h2>
 					<div class="skill_box">
 						<ul class="skill_list">
-							<li class="skillbar skillbar-html" data-percent="75">
+							<li class="skillbar skillbar-html" data-percent="86">
 								<div class="skillbar-title">HTML</div>
 								<div class="skillbar-bar"></div>
 								<div class="skill-bar-percent"></div>
 							</li>
-							<li class="skillbar skillbar-css" data-percent="70">
+							<li class="skillbar skillbar-css" data-percent="80">
 								<div class="skillbar-title">CSS</div>
 								<div class="skillbar-bar"></div>
 								<div class="skill-bar-percent"></div>
@@ -197,13 +201,13 @@
 								<div class="skillbar-bar"></div>
 								<div class="skill-bar-percent"></div>
 							</li>
-							<li class="skillbar skillbar-ps" data-percent="30">
-								<div class="skillbar-title">PhotoShop</div>
+							<li class="skillbar skillbar-php" data-percent="20">
+								<div class="skillbar-title">PHP</div>
 								<div class="skillbar-bar"></div>
 								<div class="skill-bar-percent"></div>
 							</li>
-							<li class="skillbar skillbar-ir" data-percent="30">
-								<div class="skillbar-title">Illustrator</div>
+							<li class="skillbar skillbar-git" data-percent="60">
+								<div class="skillbar-title">Git</div>
 								<div class="skillbar-bar"></div>
 								<div class="skill-bar-percent"></div>
 							</li>
@@ -213,43 +217,50 @@
 				</section>
 
 				<!-- BEGIN main_CONTACT -->
-				<section class="main_CONTACT">
+				<section id="main_contact" class="main_contact">
 					<h2 class="section_ttl">CONTACT</h2>
-					<div class="CONTACT_box">
+					<div class="contact_box">
 						<form action="" method="post">
-							<div>
-								<label for="name">NAME:</label>
-								<input
-									type="text"
-									id="name"
-									name="person-name"
-									placeholder="お名前"
-								/>
+							<div class="form_left">
+								<div class="form_name">
+									<label for="name">NAME</label>
+									<input
+										type="text"
+										id="name"
+										name="person-name"
+										placeholder="お名前"
+									/>
+								</div>
+								<div class="form_email">
+									<label for="mail">E-Mail</label>
+									<input
+										type="email"
+										id="email"
+										name="person-mail"
+										placeholder="メールアドレス"
+									/>
+								</div>
 							</div>
-							<div>
-								<label for="mail">E-Mail:</label>
-								<input
-									type="email"
-									id="email"
-									name="person-mail"
-									placeholder="E-Mail"
-								/>
-							</div>
-							<div>
-								<label for="msg">Message</label>
-								<input type="msg" id="email" name="person-message" />
+							<div class="form_right">
+								<div class="form_msg">
+									<label for="msg">Message</label>
+									<textarea
+										type="msg"
+										id="email"
+										name="person-message"
+									></textarea>
+								</div>
 							</div>
 						</form>
 					</div>
 					<!-- END main_CONTACT -->
 				</section>
-
 				<!-- END main -->
 			</main>
 
 			<!-- BEGIN footer -->
 			<footer id="footer">
-				<div class="footer_copyright">&copy;CopyRights Nashimoto Yuta</div>
+				<div class="footer_copyright">&copy; 2018 Nashimoto Yuta</div>
 				<!-- END footer -->
 			</footer>
 		</div>

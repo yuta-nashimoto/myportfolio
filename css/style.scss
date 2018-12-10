@@ -16,7 +16,8 @@ $base_color: #152b4b; //背景色
 $base_fontColor: #a1a9b0; //文字の色
 $base_fontSize-pc: 16px; //PC版 ベースフォント
 $base_fontSize-sp: 14px; //SP版 ベースフォント
-$sec_ttl: 40px;
+$sec_ttl-pc: 36px;
+$sec_ttl-sp: 24px;
 $contents_width: 90%;
 
 /* ==============================
@@ -24,14 +25,14 @@ $contents_width: 90%;
 ============================== */
 body {
 	box-sizing: border-box;
-	font-size: $base_fontSize-pc;
+	font-size: $base_fontSize-sp;
 }
 .wrapper {
 	box-sizing: border-box;
 	position: relative;
 }
 .section_ttl {
-	font-size: $sec_ttl;
+	font-size: $sec_ttl-sp;
 	letter-spacing: 3px;
 	margin-bottom: 30px;
 	text-align: center;
@@ -44,33 +45,36 @@ img {
 }
 
 .is_none {
-	// display: none !important;
+	display: none !important;
 }
 /* ==============================
 03.header
 ============================== */
 #header {
-	background-color: $base_color;
+	background-color: #1f4070;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
 	width: 100%;
-	.header_inner {
-		display: flex;
-		justify-content: space-around;
-		width: 75%;
-		margin: 0 auto;
-		padding: 4px 0;
-		.gnav {
-			.gnav_list {
-				display: flex;
-				a {
-					display: block;
-					padding: 14px 30px;
-					color: $base_fontColor;
-					letter-spacing: 2px;
-				}
+}
+
+.gnav_wrap {
+	display: flex;
+	justify-content: space-around;
+	padding: 4px 0;
+	.gnav {
+		width: 100%;
+		.gnav_list {
+			display: flex;
+			flex-direction: column;
+
+			a {
+				display: block;
+				padding: 14px 30px;
+				color: $base_fontColor;
+				letter-spacing: 2px;
+				text-align: center;
 			}
 		}
 	}
@@ -82,19 +86,19 @@ img {
 #main {
 	background-color: $base_color;
 	color: $base_fontColor;
-	padding-top: 60px;
+	padding-top: 40px;
 	.main_visual {
-		height: 80vh;
+		height: calc(100vh - 40px);
 		position: relative;
 		background: url(../img/bg/mv_bg.jpg) center/cover fixed no-repeat;
 		.main_ttl {
-			font-size: 64px;
+			font-size: 40px;
 			color: $base_fontColor;
 			letter-spacing: 3px;
 			position: absolute;
-			top: calc(50% - 60px);
+			top: calc(50% - 40px);
 			left: 12.5%;
-			transform: translateY(-50%);
+			transform: translateY(calc(-50% + 40px));
 			span {
 				color: #856e07;
 			}
@@ -103,7 +107,7 @@ img {
 			content: "";
 			display: block;
 			width: 100%;
-			height: 80vh;
+			height: 100vh;
 			background-color: rgba(27, 36, 76, 0.4);
 			position: absolute;
 			top: 0;
@@ -118,7 +122,6 @@ img {
 	padding-top: 24px;
 	.about_detail {
 		.about_detail_item {
-			display: flex;
 			padding: 20px 0;
 			border-bottom: 1px solid $base_fontColor;
 			&:first-child {
@@ -128,21 +131,19 @@ img {
 			}
 			.detail_ttl,
 			.detail_txt {
-				font-size: 18px;
+				font-size: $base_fontSize-sp;
 			}
 			.detail_ttl {
-				width: 16%;
-				margin-right: 40px;
+				font-weight: bold;
 			}
 			.detail_txt {
-				width: 84%;
+				padding-left: 10px;
 			}
 			.careerbox {
 				div {
 					margin-bottom: 20px;
 					.career_txt {
-						padding-left: 24px;
-						font-size: 16px;
+						font-size: $base_fontSize-sp;
 					}
 				}
 			}
@@ -156,16 +157,18 @@ img {
 	padding-top: 24px;
 	.portfolio_list {
 		display: flex;
-		justify-content: space-around;
+		flex-direction: column;
+		width: 80%;
+		margin: 0 auto;
 		.portfolio_item {
-			background: #fff;
-			width: calc(100% / 3 - 12px);
 			position: relative;
+			border-radius: 3px;
+			overflow: hidden;
 			.portfolio_img_box {
 				box-sizing: border-box;
 			}
-			&:not(:nth-child(3n)) {
-				margin-right: 18px;
+			&:not(:last-child) {
+				margin-bottom: 48px;
 			}
 			.portfolio_detail_box {
 				box-sizing: border-box;
@@ -202,47 +205,35 @@ img {
 	margin: 0 auto 80px;
 	padding-top: 24px;
 	.skill_list {
-		width: 92%;
-		margin: 0 auto;
 		.skillbar {
 			position: relative;
 			display: inline-block;
 			background: #eee;
-			height: 50px;
+			height: 34px;
 			border-radius: 3px;
 			width: 100%;
 			box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12) inset;
 			&:not(:last-child) {
 				margin-bottom: 50px;
 			}
-			&:before {
-				content: "";
-				position: absolute;
-				top: 50%;
-				left: -48px;
-				transform: translateY(-50%);
-				display: block;
-				width: 36px;
-				height: 36px;
-			}
 			.skillbar-title {
 				position: absolute;
 				top: 0;
 				left: 0;
-				width: 80px;
+				width: 76px;
 				font-weight: bold;
-				font-size: 13px;
+				font-size: 12px;
 				color: #ffffff;
 				background: #6adcfa;
 				border-top-left-radius: 3px;
 				border-bottom-left-radius: 3px;
 				background: rgba(0, 0, 0, 0.1);
-				padding: 0 20px;
-				height: 50px;
-				line-height: 50px;
+				padding: 0 8px;
+				height: 34px;
+				line-height: 34px;
 			}
 			.skillbar-bar {
-				height: 50px;
+				height: 34px;
 				width: 0px;
 				background: #6adcfa;
 				border-radius: 3px;
@@ -250,45 +241,349 @@ img {
 			}
 			.skill-bar-percent {
 				position: absolute;
-				right: -36px;
+				right: 5px;
 				top: 0;
 				font-size: 11px;
-				height: 50px;
-				line-height: 40px;
+				height: 34px;
+				line-height: 34px;
 				color: $base_fontColor;
 			}
 		}
 		.skillbar-html {
-			&:before {
-				background: url(../img/icon/html-5.svg) center/36px 36px no-repeat;
-			}
 			.skillbar-title {
-				background: #d35400;
+				background: transparent;
 			}
 			.skillbar-bar {
 				background: #e67e22;
 			}
 		}
 		.skillbar-css {
-			&:before {
-				background: url(../img/icon/css-3.svg) center/36px 36px no-repeat;
-			}
 			.skillbar-title {
-				background: #0c73b8;
+				background: transparent;
 			}
 			.skillbar-bar {
 				background: #268dd2;
 			}
 		}
 		.skillbar-js {
-			&:before {
-				background: url(../img/icon/javascript.svg) center/36px 36px no-repeat;
-			}
 			.skillbar-title {
-				background: #e5a228;
+				background: transparent;
 			}
 			.skillbar-bar {
 				background: #febb42;
+			}
+		}
+		.skillbar-php {
+			.skillbar-title {
+				background: transparent;
+			}
+			.skillbar-bar {
+				background: #5a68a5;
+			}
+		}
+		.skillbar-git {
+			.skillbar-title {
+				background: transparent;
+			}
+			.skillbar-bar {
+				background: #51a4f5;
+			}
+		}
+	}
+}
+
+.main_contact {
+	padding: 24px 12px 50px;
+	background: #24497f;
+	.contact_box {
+		form {
+			display: flex;
+			flex-direction: column;
+			.form_left {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.form_name,
+			.form_email,
+			.form_msg {
+				label {
+					font-size: 14px;
+				}
+				input,
+				textarea {
+					box-sizing: border-box;
+					display: block;
+					padding: 8px;
+					width: 100%;
+					border-radius: 3px;
+					box-shadow: none;
+					border: none;
+				}
+			}
+			.form_email {
+				margin-top: 30px;
+			}
+			.form_msg {
+				margin-top: 30px;
+				textarea {
+					background: #fff;
+					height: 120px;
+					resize: vertical;
+				}
+			}
+		}
+	}
+}
+
+#footer {
+	background-color: #1f4070;
+	color: $base_fontColor;
+	.footer_copyright {
+		padding: 10px 0;
+		text-align: center;
+	}
+}
+
+/* =======================================================================
+PC版_CSS(ブレークポイント:768px)
+========================================================================== */
+@media screen and (min-width: 768px) {
+	body {
+		font-size: $base_fontSize-pc;
+	}
+	.section_ttl {
+		font-size: $sec_ttl-pc;
+	}
+	/* ==============================
+03.header
+============================== */
+	#header {
+		background-color: $base_color;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+	}
+
+	.gnav_wrap {
+		display: flex;
+		width: 75%;
+		margin: 0 auto;
+		padding: 4px 0;
+		.gnav {
+			.gnav_list {
+				flex-direction: row;
+				justify-content: space-between;
+				a {
+					display: block;
+					padding: 14px 30px;
+					color: $base_fontColor;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+
+	/* ==============================
+03.main
+============================== */
+	#main {
+		background-color: $base_color;
+		color: $base_fontColor;
+		padding-top: 60px;
+		.main_visual {
+			height: calc(100vh - 60px);
+			position: relative;
+			background: url(../img/bg/mv_bg.jpg) center/cover fixed no-repeat;
+			.main_ttl {
+				font-size: 64px;
+				color: $base_fontColor;
+				letter-spacing: 3px;
+				position: absolute;
+				top: calc(50% - 60px);
+				left: 12.5%;
+				transform: translateY(calc(-50% + 60px));
+				span {
+					color: #856e07;
+				}
+			}
+			&:before {
+				content: "";
+				display: block;
+				width: 100%;
+				height: calc(100vh - 60px);
+				background-color: rgba(27, 36, 76, 0.4);
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+
+	.about {
+		width: $contents_width;
+		margin: 0 auto 80px;
+		padding-top: 24px;
+		.about_detail {
+			.about_detail_item {
+				display: flex;
+				padding: 20px 0;
+				border-bottom: 1px solid $base_fontColor;
+				&:first-child {
+					border-top: 1px solid $base_fontColor;
+					margin-top: 0;
+					padding-top: 20px;
+				}
+				.detail_ttl,
+				.detail_txt {
+					font-size: 18px;
+				}
+				.detail_ttl {
+					width: 16%;
+					margin-right: 40px;
+				}
+				.detail_txt {
+					width: 84%;
+				}
+				.careerbox {
+					div {
+						margin-bottom: 20px;
+						.career_txt {
+							padding-left: 24px;
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.main_portfolio {
+		.portfolio_list {
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			.portfolio_item {
+				width: calc(100% / 3 - 12px);
+				.portfolio_img_box {
+					box-sizing: border-box;
+				}
+				&:not(:last-child) {
+					margin-bottom: 0;
+				}
+				&:not(:nth-child(3n)) {
+					margin-right: 18px;
+				}
+			}
+		}
+	}
+	.skill {
+		width: $contents_width;
+		margin: 0 auto 80px;
+		padding-top: 24px;
+		.skill_list {
+			width: 92%;
+			margin: 0 auto;
+			.skillbar {
+				height: 50px;
+				width: 100%;
+				&:not(:last-child) {
+					margin-bottom: 50px;
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: -48px;
+					transform: translateY(-50%);
+					display: block;
+					width: 36px;
+					height: 36px;
+				}
+				.skillbar-title {
+					height: 50px;
+					line-height: 50px;
+				}
+				.skillbar-bar {
+					height: 50px;
+				}
+				.skill-bar-percent {
+					height: 50px;
+					line-height: 50px;
+					right: -45px;
+				}
+			}
+			.skillbar-html {
+				&:before {
+					background: url(../img/icon/html-5.svg) center/36px 36px no-repeat;
+				}
+				.skillbar-title {
+					background: #d35400;
+				}
+			}
+			.skillbar-css {
+				&:before {
+					background: url(../img/icon/css-3.svg) center/36px 36px no-repeat;
+				}
+				.skillbar-title {
+					background: #0c73b8;
+				}
+			}
+			.skillbar-js {
+				&:before {
+					background: url(../img/icon/javascript.svg) center/36px 36px no-repeat;
+				}
+				.skillbar-title {
+					background: #e5a228;
+				}
+			}
+			.skillbar-php {
+				&:before {
+					background: url(../img/icon/php.svg) center/36px 36px no-repeat;
+				}
+				.skillbar-title {
+					background: #46465e;
+				}
+			}
+			.skillbar-git {
+				&:before {
+					background: url(../img/icon/git-icon.svg) center/36px 36px no-repeat;
+				}
+				.skillbar-title {
+					background: #4183c4;
+				}
+			}
+		}
+	}
+
+	.main_contact {
+		width: $contents_width;
+		margin: 0 auto;
+		.contact_box {
+			width: 70%;
+			margin: 0 auto;
+			form {
+				flex-direction: row;
+				justify-content: space-between;
+				.form_name,
+				.form_email,
+				.form_msg {
+					input,
+					textarea {
+						width: 200px;
+					}
+				}
+				.form_email {
+					margin-top: 30px;
+				}
+				.form_msg {
+					margin-top: 0;
+					textarea {
+						width: 350px;
+					}
+				}
 			}
 		}
 	}
