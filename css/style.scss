@@ -62,16 +62,15 @@ img {
 .gnav_wrap {
 	display: flex;
 	justify-content: space-around;
-	padding: 4px 0;
+	padding: 10px 0;
 	.gnav {
 		width: 100%;
 		.gnav_list {
 			display: flex;
 			flex-direction: column;
-
 			a {
-				display: block;
-				padding: 14px 30px;
+				display: inline-block;
+				padding: 8px 30px;
 				color: $base_fontColor;
 				letter-spacing: 2px;
 				text-align: center;
@@ -371,16 +370,39 @@ PC版_CSS(ブレークポイント:768px)
 		display: flex;
 		width: 75%;
 		margin: 0 auto;
-		padding: 4px 0;
+		padding: 10px 0;
 		.gnav {
 			.gnav_list {
 				flex-direction: row;
 				justify-content: space-between;
 				a {
-					display: block;
-					padding: 14px 30px;
+					display: inline-block;
+					padding: 8px 30px;
 					color: $base_fontColor;
 					letter-spacing: 2px;
+					position: relative;
+					transition: .3s;
+					&:before,&:after{
+						display: block;
+						position: absolute;
+						left: 50%;
+						content: "";
+						width: 0;
+						height: 1px;
+						background: #24497f;
+						transition: .3s;
+						transform: translateX(-50%);
+					}
+					&:before{
+						top: 0;
+					}
+					&:after{
+						bottom: 0;
+					}
+					&:hover:before,
+					&:hover:after{
+						width: 100%;
+					}
 				}
 			}
 		}

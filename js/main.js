@@ -2,13 +2,7 @@ $(function() {
 	/***************************************************
 	 * スキルバー実装
 	****************************************************/
-	var skillOffset = $('#skill').offset().top;
-	var $skillBar = $(".skillbar");
-	$skillBar.skillBars({
-		from: 0, // バーの動くスタート位置
-		speed: 1500, // 動くスピード
-		interval: 100 // 動き始めるまでの時間
-	});
+
 
 
 
@@ -48,6 +42,17 @@ $(function() {
 			targetTxt.css('top', targetTxtPos - scrollY / targetFactor02);
 		} else {
 			targetTxt.css('top', '50%');
+		}
+
+
+		var skillOffset = $('#skill').offset().top;
+		var $skillBar = $(".skillbar");
+		if(scrollY > skillOffset - 400){
+			$skillBar.skillBars({
+				from: 0, // バーの動くスタート位置
+				speed: 1500, // 動くスピード
+				interval: 100 // 動き始めるまでの時間
+			});
 		}
 	});
 
