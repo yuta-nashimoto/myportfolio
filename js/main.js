@@ -2,6 +2,7 @@ $(function() {
 	/***************************************************
 	 * スキルバー実装
 	****************************************************/
+	var skillOffset = $('#skill').offset().top;
 	var $skillBar = $(".skillbar");
 	$skillBar.skillBars({
 		from: 0, // バーの動くスタート位置
@@ -60,7 +61,7 @@ $(function() {
 		var href = $(this).attr("href");
 		var target = $(href == "#" || href == "" ? 'html' : href);
 		var position = target.offset().top;
-		$('body,html').animate({scrollTop:position - 40}, speed, 'swing');
+		$('body,html').animate({ scrollTop: position - 40}, speed, 'swing');
 		return false;
 	});
 
