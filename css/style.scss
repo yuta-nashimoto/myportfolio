@@ -354,7 +354,7 @@ PC版_CSS(ブレークポイント:768px)
 	.section_ttl {
 		font-size: $sec_ttl-pc;
 	}
-	/* ==============================
+/* ==============================
 03.header
 ============================== */
 	#header {
@@ -408,7 +408,7 @@ PC版_CSS(ブレークポイント:768px)
 		}
 	}
 
-	/* ==============================
+/* ==============================
 03.main
 ============================== */
 	#main {
@@ -485,7 +485,8 @@ PC版_CSS(ブレークポイント:768px)
 	.main_portfolio {
 		.portfolio_list {
 			flex-direction: row;
-			justify-content: space-around;
+			justify-content: space-between;
+			flex-wrap: wrap;
 			width: 100%;
 			.portfolio_item {
 				width: calc(100% / 3 - 12px);
@@ -495,8 +496,8 @@ PC版_CSS(ブレークポイント:768px)
 				&:not(:last-child) {
 					margin-bottom: 0;
 				}
-				&:not(:nth-child(3n)) {
-					margin-right: 18px;
+				&:nth-child(n+4){
+					margin-top: 16px;
 				}
 			}
 		}
