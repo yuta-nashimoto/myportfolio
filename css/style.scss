@@ -51,18 +51,23 @@ img {
 03.header
 ============================== */
 #header {
-	background-color: #1f4070;
+	background-color: $base_color;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
 	width: 100%;
+	.menu-trigger{
+		position: fixed;
+		top: 20px;
+		right: 50%;
+		transform: translateX(50%);
+	}
 }
 
 .gnav_wrap {
 	display: flex;
 	justify-content: space-around;
-	padding: 10px 0;
 	.gnav {
 		width: 100%;
 		.gnav_list {
@@ -85,7 +90,6 @@ img {
 #main {
 	background-color: $base_color;
 	color: $base_fontColor;
-	padding-top: 40px;
 	.main_visual {
 		height: calc(100vh - 40px);
 		position: relative;
@@ -412,9 +416,7 @@ PC版_CSS(ブレークポイント:768px)
 03.main
 ============================== */
 	#main {
-		background-color: $base_color;
-		color: $base_fontColor;
-		padding-top: 60px;
+		padding-top: 40px;
 		.main_visual {
 			height: calc(100vh - 60px);
 			position: relative;

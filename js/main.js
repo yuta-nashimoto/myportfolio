@@ -1,27 +1,42 @@
+
+var $window = $(window); //ウィンドウのDOMを取得
+var windowHeight = $window.height(); //画面の高さを取得
+
+
+
 $(function() {
 	/***************************************************
 	 * ナビ表示の切り替え
 	****************************************************/
-	var nav = $('.gnav_wrap');
+	var nav = $('.gnav_list');
+
 	if (window.matchMedia('(min-width:768px)').matches) {
 		nav.removeClass('is_none');
 	} else {
 		nav.addClass('is_none');
 	}
 
-
+	/***************************************************
+	 * ハンバーガーメニュー
+	****************************************************/
+	var $humMenu = $('.menu-trigger');
+	$humMenu.click(function(){
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+		} else {
+			$(this).addClass('active');
+		}
+	});
 
 	/***************************************************
 	 * MVとメインタイトルのパララックスエフェクト
 	****************************************************/
-	var $window = $(window); //ウィンドウのDOMを取得
 	var targetBg = $('.parallax'); //背景のDOMを取得
 	var targetBgPos = targetBg.offset().top; //背景の位置を取得
 	var targetTxt = $('.parallax_txt'); //テキストのDOMを取得
 	var targetTxtPos = targetTxt.offset().top; //テキストの位置を取得
 	var targetFactor01 = 0.2;
 	var targetFactor02 = 1.6;
-	var windowHeight = $window.height(); //画面の高さを取得
 	var scrollYStart01 = targetBgPos - windowHeight;
 	var scrollYStart02 = targetTxtPos - windowHeight;
 	$window.scroll(function () { //ウィンドウがスクロールされたときの処理
@@ -43,7 +58,7 @@ $(function() {
 		****************************************************/
 		var skillOffset = $('#skill').offset().top;
 		var $skillBar = $(".skillbar");
-		if(scrollY > skillOffset - 400){
+		if(scrollY > skillOffset - 500){
 			$skillBar.skillBars({
 				from: 0, // バーの動くスタート位置
 				speed: 1500, // 動くスピード
@@ -51,6 +66,18 @@ $(function() {
 			});
 		}
 	});
+
+	/***************************************************
+	 * 背景画像　iPhone対策
+	****************************************************/
+	var device = navigator.userAgent;
+	if (device.indexOf('iPhone') !== -1 || device.indexOf('iPad') !== -1) {
+		//iPhoneかiPadならば
+		$(".main_visual").css({ 
+			"background-position": "top right",
+			"background-size": "auto " + 110 + "vh" 
+		});
+	}
 
 
 	/***************************************************
