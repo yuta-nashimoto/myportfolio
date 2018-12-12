@@ -66,16 +66,30 @@ img {
 }
 
 .gnav_wrap {
+	background-color: $base_color;
 	display: flex;
 	justify-content: space-around;
+	position: fixed;
+	top: -100%;
+	width: 100%;
 	.gnav {
+		box-sizing: border-box;
 		width: 100%;
+		padding: 0 14px;
 		.gnav_list {
 			display: flex;
 			flex-direction: column;
+			padding: 68px 0;
+			.gnav_item{
+				border-bottom: 1px solid $base_fontColor;
+				&:first-child{
+					border-top: 1px solid $base_fontColor;
+				}
+			}
 			a {
 				display: inline-block;
-				padding: 8px 30px;
+				width: 100%;
+				padding: 16px 0;
 				color: $base_fontColor;
 				letter-spacing: 2px;
 				text-align: center;
@@ -91,7 +105,7 @@ img {
 	background-color: $base_color;
 	color: $base_fontColor;
 	.main_visual {
-		height: calc(100vh - 40px);
+		height: 100vh;
 		position: relative;
 		background: url(../img/bg/mv_bg.jpg) center/cover fixed no-repeat;
 		.main_ttl {
@@ -110,7 +124,7 @@ img {
 			content: "";
 			display: block;
 			width: 100%;
-			height: calc(100vh - 40px);
+			height: 100vh;
 			background-color: rgba(27, 36, 76, 0.4);
 			position: absolute;
 			top: 0;

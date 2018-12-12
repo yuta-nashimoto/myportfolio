@@ -1,4 +1,7 @@
 
+/***************************************************
+ * グローバル変数
+****************************************************/
 var $window = $(window); //ウィンドウのDOMを取得
 var windowHeight = $window.height(); //画面の高さを取得
 
@@ -8,25 +11,39 @@ $(function() {
 	/***************************************************
 	 * ナビ表示の切り替え
 	****************************************************/
-	var nav = $('.gnav_list');
-
+	var $nav = $('.gnav_wrap');
+	var $humMenu = $('.menu-trigger');
+	var $navAnchor = $('.gnav_list a');
 	if (window.matchMedia('(min-width:768px)').matches) {
-		nav.removeClass('is_none');
+		$humMenu.addClass('is_none');
 	} else {
-		nav.addClass('is_none');
+		$humMenu.removeClass('is_none');
+	}
+	/**********************************
+	 * ハンバーガーメニュー
+	***********************************/
+	// SP版ナビ トグル関数
+	function navToggle() {
+		if($humMenu.hasClass('active')){
+			$humMenu.removeClass('active');
+			$nav.stop().animate({
+				'top': -100 + "%"
+			},250)
+		} else {
+			$humMenu.addClass('active');
+			$nav.stop().animate({
+				'top':0
+			},250)
+		}
 	}
 
-	/***************************************************
-	 * ハンバーガーメニュー
-	****************************************************/
-	var $humMenu = $('.menu-trigger');
 	$humMenu.click(function(){
-		if($(this).hasClass('active')){
-			$(this).removeClass('active');
-		} else {
-			$(this).addClass('active');
-		}
+		navToggle();
 	});
+	$navAnchor.click(function(){
+		navToggle();
+	});
+
 
 	/***************************************************
 	 * MVとメインタイトルのパララックスエフェクト
@@ -53,9 +70,9 @@ $(function() {
 		}
 
 
-		/***************************************************
+		/*******************************************
 		 * スキルバー実装
-		****************************************************/
+		********************************************/
 		var skillOffset = $('#skill').offset().top;
 		var $skillBar = $(".skillbar");
 		if(scrollY > skillOffset - 500){
@@ -68,14 +85,14 @@ $(function() {
 	});
 
 	/***************************************************
-	 * 背景画像　iPhone対策
+	 * MV背景画像　iPhone対策
 	****************************************************/
 	var device = navigator.userAgent;
 	if (device.indexOf('iPhone') !== -1 || device.indexOf('iPad') !== -1) {
 		//iPhoneかiPadならば
 		$(".main_visual").css({ 
 			"background-position": "top right",
-			"background-size": "auto " + 110 + "vh" 
+			"background-size": "auto " + 120 + "vh" 
 		});
 	}
 
