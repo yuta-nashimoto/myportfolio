@@ -386,40 +386,50 @@ PC版_CSS(ブレークポイント:768px)
 
 	.gnav_wrap {
 		display: flex;
-		width: 75%;
 		margin: 0 auto;
 		padding: 10px 0;
+		top: 0;
+		width: 100%;
 		.gnav {
 			.gnav_list {
 				flex-direction: row;
 				justify-content: space-between;
-				a {
-					display: inline-block;
-					padding: 8px 30px;
-					color: $base_fontColor;
-					letter-spacing: 2px;
-					position: relative;
-					transition: .3s;
-					&:before,&:after{
-						display: block;
-						position: absolute;
-						left: 50%;
-						content: "";
-						width: 0;
-						height: 1px;
-						background: #24497f;
+				padding: 0;
+				width: 75%;
+				margin: 0 auto;
+				.gnav_item{
+					border: none;
+					&:first-child{
+						border: none;
+					}
+					a {
+						display: inline-block;
+						padding: 8px 30px;
+						color: $base_fontColor;
+						letter-spacing: 2px;
+						position: relative;
 						transition: .3s;
-						transform: translateX(-50%);
-					}
-					&:before{
-						top: 0;
-					}
-					&:after{
-						bottom: 0;
-					}
-					&:hover:before,
-					&:hover:after{
-						width: 100%;
+						&:before,&:after{
+							display: block;
+							position: absolute;
+							left: 50%;
+							content: "";
+							width: 0;
+							height: 1px;
+							background: #a1a9b0;
+							transition: .3s;
+							transform: translateX(-50%);
+						}
+						&:before{
+							top: 0;
+						}
+						&:after{
+							bottom: 0;
+						}
+						&:hover:before,
+						&:hover:after{
+							width: 100%;
+						}
 					}
 				}
 			}
@@ -501,7 +511,7 @@ PC版_CSS(ブレークポイント:768px)
 	.main_portfolio {
 		.portfolio_list {
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: space-around;
 			flex-wrap: wrap;
 			width: 100%;
 			.portfolio_item {
