@@ -8,23 +8,6 @@ var windowHeight = $window.height(); //画面の高さを取得
 
 
 $(function() {
-	/***************************************************
-	 * ナビ表示の切り替え
-	****************************************************/
-	var $nav = $('.gnav_wrap');
-	var $humMenu = $('.menu-trigger');
-	var $navAnchor = $('.gnav_list a');
-	if (window.matchMedia('(min-width:768px)').matches) {
-		$humMenu.addClass('is_none');
-	} else {
-		$humMenu.removeClass('is_none');
-		$navAnchor.click(function(){
-			navToggle();
-		});
-		$humMenu.click(function(){
-			navToggle();
-		});
-	}
 	/**********************************
 	 * ハンバーガーメニュー
 	***********************************/
@@ -41,6 +24,23 @@ $(function() {
 				'top':0
 			},250)
 		}
+	}
+	/***************************************************
+	 * ナビゲーションの切り替えとSP版の制御
+	****************************************************/
+	var $nav = $('.gnav_wrap');
+	var $humMenu = $('.menu-trigger');
+	var $navAnchor = $('.gnav_list a');
+	if (window.matchMedia('(min-width:768px)').matches) {
+		$humMenu.addClass('is_none');
+	} else {
+		$humMenu.removeClass('is_none');
+		$navAnchor.click(function(){
+			navToggle();
+		});
+		$humMenu.click(function(){
+			navToggle();
+		});
 	}
 
 
@@ -126,5 +126,5 @@ $(function() {
 
 	$('#submit_btn').click(function(e) {
 		return e.preventDefault();
-	});                                 
+	});
 });
