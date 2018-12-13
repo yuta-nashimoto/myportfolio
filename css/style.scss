@@ -315,8 +315,10 @@ img {
 	.contact_box {
 		form {
 			.input_area{
-				display: flex;
-				flex-direction: column;
+				label{
+					display: block;
+					margin-bottom: 6px;
+				}
 				.form_left {
 					display: flex;
 					flex-direction: column;
@@ -399,17 +401,7 @@ PC版_CSS(ブレークポイント:768px)
 /* ==============================
 03.header
 ============================== */
-	#header {
-		background-color: $base_color;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 10;
-		width: 100%;
-	}
-
 	.gnav_wrap {
-		display: flex;
 		margin: 0 auto;
 		padding: 10px 0;
 		top: 0;
@@ -427,10 +419,8 @@ PC版_CSS(ブレークポイント:768px)
 						border: none;
 					}
 					a {
-						display: inline-block;
 						padding: 8px 30px;
 						color: $base_fontColor;
-						letter-spacing: 2px;
 						position: relative;
 						transition: .3s;
 						&:before,&:after{
@@ -467,47 +457,21 @@ PC版_CSS(ブレークポイント:768px)
 		padding-top: 40px;
 		.main_visual {
 			height: calc(100vh - 60px);
-			position: relative;
-			background: url(../img/bg/mv_bg.jpg) center/cover fixed no-repeat;
 			.main_ttl {
 				font-size: 64px;
-				color: $base_fontColor;
-				letter-spacing: 3px;
-				position: absolute;
 				top: calc(50% - 60px);
-				left: 12.5%;
 				transform: translateY(calc(-50% + 60px));
-				span {
-					color: #856e07;
-				}
 			}
 			&:before {
-				content: "";
-				display: block;
-				width: 100%;
 				height: calc(100vh - 60px);
-				background-color: rgba(27, 36, 76, 0.4);
-				position: absolute;
-				top: 0;
-				left: 0;
 			}
 		}
 	}
 
 	.about {
-		width: $contents_width;
-		margin: 0 auto 80px;
-		padding-top: 24px;
 		.about_detail {
 			.about_detail_item {
 				display: flex;
-				padding: 20px 0;
-				border-bottom: 1px solid $base_fontColor;
-				&:first-child {
-					border-top: 1px solid $base_fontColor;
-					margin-top: 0;
-					padding-top: 20px;
-				}
 				.detail_ttl,
 				.detail_txt {
 					font-size: 18px;
@@ -521,10 +485,9 @@ PC版_CSS(ブレークポイント:768px)
 				}
 				.careerbox {
 					div {
-						margin-bottom: 20px;
 						.career_txt {
 							padding-left: 24px;
-							font-size: 16px;
+							font-size: $base_fontSize-pc;
 						}
 					}
 				}
@@ -540,9 +503,6 @@ PC版_CSS(ブレークポイント:768px)
 			width: 100%;
 			.portfolio_item {
 				width: calc(100% / 3 - 12px);
-				.portfolio_img_box {
-					box-sizing: border-box;
-				}
 				&:not(:last-child) {
 					margin-bottom: 0;
 				}
@@ -553,9 +513,6 @@ PC版_CSS(ブレークポイント:768px)
 		}
 	}
 	.skill {
-		width: $contents_width;
-		margin: 0 auto 80px;
-		padding-top: 24px;
 		.skill_list {
 			width: 92%;
 			margin: 0 auto;
