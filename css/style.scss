@@ -314,39 +314,63 @@ img {
 	background: #24497f;
 	.contact_box {
 		form {
-			display: flex;
-			flex-direction: column;
-			.form_left {
+			.input_area{
 				display: flex;
 				flex-direction: column;
-				justify-content: space-between;
-			}
-			.form_name,
-			.form_email,
-			.form_msg {
-				label {
-					font-size: 14px;
+				.form_left {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
 				}
-				input,
-				textarea {
-					box-sizing: border-box;
+				.form_name,
+				.form_email,
+				.form_msg {
+					label {
+						font-size: 14px;
+					}
+					input,
+					textarea {
+						box-sizing: border-box;
+						display: block;
+						padding: 8px;
+						width: 100%;
+						border-radius: 3px;
+						box-shadow: none;
+						border: none;
+					}
+				}
+				.form_email {
+					margin-top: 30px;
+				}
+				.form_msg {
+					margin-top: 30px;
+					textarea {
+						background: #fff;
+						height: 120px;
+						resize: vertical;
+					}
+				}
+			}
+			.submit_btn{
+				width: 180px;
+				margin: 30px auto 0;
+				border: 2px solid #a1a9b0;
+				border-radius: 3px;
+				overflow: hidden;
+				input{
+					cursor: pointer;
 					display: block;
-					padding: 8px;
 					width: 100%;
-					border-radius: 3px;
-					box-shadow: none;
+					padding: 10px 0;
+					color: #fff;
+					font-size: 14px;
+					letter-spacing: 2px;
+					background: transparent;
 					border: none;
 				}
-			}
-			.form_email {
-				margin-top: 30px;
-			}
-			.form_msg {
-				margin-top: 30px;
-				textarea {
-					background: #fff;
-					height: 120px;
-					resize: vertical;
+				&:active{
+					background: #a1a9b0;
+					color: #fff;
 				}
 			}
 		}
@@ -614,23 +638,18 @@ PC版_CSS(ブレークポイント:768px)
 			width: 75%;
 			margin: 0 auto;
 			form {
-				flex-direction: row;
-				justify-content: space-around;
-				.form_name,
-				.form_email,
-				.form_msg {
-					input,
-					textarea {
-						width: 200px;
-					}
-				}
 				.form_email {
 					margin-top: 30px;
 				}
 				.form_msg {
 					margin-top: 0;
-					textarea {
-						width: 350px;
+				}
+				.submit_btn{
+					transition: all 0.3s ease;
+					&:hover{
+						transition: all .3s ease;
+						background: #a1a9b0;
+						color: #fff;
 					}
 				}
 			}

@@ -18,6 +18,12 @@ $(function() {
 		$humMenu.addClass('is_none');
 	} else {
 		$humMenu.removeClass('is_none');
+		$navAnchor.click(function(){
+			navToggle();
+		});
+		$humMenu.click(function(){
+			navToggle();
+		});
 	}
 	/**********************************
 	 * ハンバーガーメニュー
@@ -37,12 +43,6 @@ $(function() {
 		}
 	}
 
-	$humMenu.click(function(){
-		navToggle();
-	});
-	$navAnchor.click(function(){
-		navToggle();
-	});
 
 
 	/***************************************************
@@ -94,6 +94,9 @@ $(function() {
 			"background-position": "top right",
 			"background-size": "auto " + 120 + "vh" 
 		});
+		$('#submit_btn').click(function(e) {
+			return e.preventDefault();
+		});
 	}
 
 
@@ -121,4 +124,7 @@ $(function() {
 		$(this).find($overRayItem).stop().animate({'top': 100 + '%'},200);
 	});
 
+	$('#submit_btn').click(function(e) {
+		return e.preventDefault();
+	});                                 
 });

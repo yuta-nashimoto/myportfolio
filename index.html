@@ -174,48 +174,36 @@
 							<li class="skillbar skillbar-git" data-percent="60">
 								<div class="skillbar-title">Git</div>
 								<div class="skillbar-bar"></div>
-								
 							</li>
 						</ul>
 					</div>
 					<!-- END skill -->
 				</section>
 
-				<!-- BEGIN main_CONTACT -->
+				<!-- BEGIN main_CONTACT -->	
 				<section id="contact" class="main_contact">
 					<h2 class="section_ttl">CONTACT</h2>
 					<div class="contact_box">
-						<form action="" method="post">
-							<div class="form_left">
-								<div class="form_name">
-									<label for="name">NAME</label>
-									<input
-										type="text"
-										id="name"
-										name="person-name"
-										placeholder="お名前"
-									/>
+						<form action="php/mail.php" method="post">
+							<div class="input_area">
+								<div class="form_left">
+									<div class="form_name">
+										<label for="name">NAME</label>
+										<input type="text" id="name" name="person-name" placeholder="お名前"/>
+									</div>
+									<div class="form_email">
+										<label for="mail">E-Mail</label>
+										<input type="email" id="email" name="person-mail" placeholder="メールアドレス"/>
+									</div>
 								</div>
-								<div class="form_email">
-									<label for="mail">E-Mail</label>
-									<input
-										type="email"
-										id="email"
-										name="person-mail"
-										placeholder="メールアドレス"
-									/>
+								<div class="form_right">
+									<div class="form_msg">
+										<label for="msg">Message</label>
+										<textarea type="msg" id="email" name="person-message" placeholder="メッセージを入力してください。"></textarea>
+									</div>
 								</div>
 							</div>
-							<div class="form_right">
-								<div class="form_msg">
-									<label for="msg">Message</label>
-									<textarea
-										type="msg"
-										id="email"
-										name="person-message"
-									></textarea>
-								</div>
-							</div>
+							<div class="submit_btn"><input type="submit" value="send" ontouchstart="" id="submit_btn"></div>
 						</form>
 					</div>
 					<!-- END main_CONTACT -->
